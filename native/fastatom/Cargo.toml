@@ -1,17 +1,18 @@
 [package]
 authors = []
 edition = "2018"
-name = "fastrss"
+name = "fastatom"
 version = "0.3.6"
 
 [lib]
 crate-type = ["dylib"]
-name = "fastrss"
+name = "fastatom"
 path = "src/lib.rs"
 
 [dependencies]
 lazy_static = "1.4"
 rss = {version = "2.0", features = ["serde"], default-features = false}
+atom_syndication = { version = "0.11", features = ["with-serde"], default-features = false }
 rustler = "0.23"
 
 serde = "1.0"

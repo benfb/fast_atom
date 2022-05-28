@@ -1,11 +1,11 @@
-defmodule FastRSS do
+defmodule FastAtom do
   @moduledoc """
-  Parse RSS quickly using a Rust NIF.
+  Parse Atom quickly using a Rust NIF.
   """
 
   defmodule Native do
     @moduledoc false
-    use Rustler, otp_app: :fast_rss, crate: "fastrss"
+    use Rustler, otp_app: :fast_atom, crate: "fastatom"
 
     # When your NIF is loaded, it will override this function.
     def parse(_a), do: :erlang.nif_error(:nif_not_loaded)
@@ -23,7 +23,7 @@ defmodule FastRSS do
     |> map_to_tuple()
   end
 
-  def parse(_somethig_else), do: {:error, "RSS feed must be passed in as a string"}
+  def parse(_somethig_else), do: {:error, "Atom feed must be passed in as a string"}
 
   defp map_to_tuple(%{"Ok" => map}), do: {:ok, map}
   defp map_to_tuple({:ok, map}), do: {:ok, map}

@@ -20,12 +20,12 @@ erl_crash.dump
 *.ez
 
 # Ignore package tarball (built via "mix hex.build").
-fast_rss-*.tar
+fast_atom-*.tar
 
 
 .elixir_ls
-priv/native/libfastrss.so
-native/fastrss/target
+priv/native/libfastatom.so
+native/fastatom/target
 /native/*/target
 
 bench/output/assets

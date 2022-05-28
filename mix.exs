@@ -1,12 +1,12 @@
-defmodule FastRSS.MixProject do
+defmodule FastAtom.MixProject do
   use Mix.Project
 
-  @source_url "https://github.com/avencera/fast_rss"
+  @source_url "https://github.com/benfb/fast_atom"
   @version "0.4.1"
 
   def project do
     [
-      app: :fast_rss,
+      app: :fast_atom,
       version: @version,
       elixir: "~> 1.6",
       build_embedded: Mix.env() == :prod,
@@ -14,17 +14,17 @@ defmodule FastRSS.MixProject do
       deps: deps(),
 
       # hex
-      description: "Fast Elixir RSS feed parser, a NIF wrapper around the Rust RSS crate",
+      description: "Fast Elixir Atom feed parser, a NIF wrapper around the Rust Atom crate",
       package: package(),
 
       # docs
-      homepage_url: "https://avencera.github.io/fast_rss/",
+      homepage_url: "https://benfb.github.io/fast_atom/",
       docs: docs(),
 
       # rustler
       start_permanent: Mix.env() == :prod,
       compilers: Mix.compilers(),
-      rustler_crates: [fastrss: []]
+      rustler_crates: [fastatom: []]
     ]
   end
 
@@ -32,15 +32,15 @@ defmodule FastRSS.MixProject do
     [
       files: [
         "lib",
-        "native/fastrss/.cargo",
-        "native/fastrss/src",
-        "native/fastrss/Cargo.toml",
-        "native/fastrss/Cargo.lock",
+        "native/fastatom/.cargo",
+        "native/fastatom/src",
+        "native/fastatom/Cargo.toml",
+        "native/fastatom/Cargo.lock",
         "mix.exs",
         "README.md",
         "LICENSE"
       ],
-      maintainers: ["Praveen Perera"],
+      maintainers: ["Ben BAiley"],
       licenses: ["Apache-2.0"],
       links: %{
         "Changelog" => "#{@source_url}/blob/master/CHANGELOG.md",
