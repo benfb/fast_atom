@@ -2,7 +2,7 @@ defmodule FastAtom.MixProject do
   use Mix.Project
 
   @source_url "https://github.com/benfb/fast_atom"
-  @version "0.1.0"
+  @version "0.1.1"
 
   def project do
     [
@@ -18,7 +18,7 @@ defmodule FastAtom.MixProject do
       package: package(),
 
       # docs
-      homepage_url: "https://benfb.github.io/fast_atom/",
+      homepage_url: @source_url,
       docs: docs(),
 
       # rustler
@@ -40,7 +40,7 @@ defmodule FastAtom.MixProject do
         "README.md",
         "LICENSE"
       ],
-      maintainers: ["Ben BAiley"],
+      maintainers: ["Ben Bailey"],
       licenses: ["Apache-2.0"],
       links: %{
         "Changelog" => "#{@source_url}/blob/master/CHANGELOG.md",

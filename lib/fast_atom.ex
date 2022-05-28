@@ -12,13 +12,13 @@ defmodule FastAtom do
   end
 
   @doc """
-  Parse a RSS string into a map.
+  Parse an Atom string into a map.
   """
   @spec parse(String.t()) :: {:ok, map()} | {:error, String.t()}
   def parse(""), do: {:error, "Cannot parse blank string"}
 
-  def parse(rss_string) when is_binary(rss_string) do
-    rss_string
+  def parse(atom_string) when is_binary(atom_string) do
+    atom_string
     |> Native.parse()
     |> map_to_tuple()
   end
